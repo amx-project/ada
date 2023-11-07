@@ -11,14 +11,19 @@ def jump_into(stream)
     elsif /pos/.match(entry.name.downcase)
       first = true
       keys = []
+      layer = ''
       stream.each_line {|l|
         l.force_encoding('utf-8')
         if first
+          layer = entry.name.downcase.split('_pos_')[0].split('_')[-1]
           keys = l.strip.split(',')
           first = false
         else
           geojson = {
             :type => 'Feature',
+            :tippecanoe => {
+              :layer => layer
+            }
           }
           geojson[:properties] = keys.zip(l.strip.split(',')).to_h
           geojson[:geometry] = {
