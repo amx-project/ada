@@ -9,6 +9,12 @@ This repository contains the address_all dataset, which is the Address Base Regi
 ## Usage
 To use this dataset, you can download the vector tiles from the provided link and integrate them into your mapping application. The dataset includes detailed address information for locations in Japan.
 
+## 2023-11-07 Release
+CID: QmSq4BdQEC3GmvpJ6MXWujEog72f6d7FwXYqhh7pN9M3Yp (563MB)
+
+- Download: https://smb.optgeo.org/ipfs/QmSq4BdQEC3GmvpJ6MXWujEog72f6d7FwXYqhh7pN9M3Yp
+- PMTiles Viewer: https://protomaps.github.io/PMTiles/?url=https%3A%2F%2Fsmb.optgeo.org%2Fipfs%2FQmSq4BdQEC3GmvpJ6MXWujEog72f6d7FwXYqhh7pN9M3Yp#map=3.08/35.35/133.75
+
 ## Source Data
 The source data for this dataset can be found at [全アドレスデータ from デジタル庁　レジストリカタログ](https://catalog.registries.digital.go.jp/rc/dataset/ba000001/resource/b535cd16-b477-4e5d-81c8-1eb116c97b2f). It is a comprehensive collection of address data maintained by the Digital Agency of Japan.
 
