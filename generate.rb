@@ -1,9 +1,16 @@
+# This script reads a zip file containing CSV files and generates GeoJSON data for each "pos" file.
+# It uses the 'zip', 'stringio', and 'json' libraries.
+# The main function is 'jump_into', which recursively jumps into nested zip files and processes the "pos" files.
+# The generated GeoJSON data is printed to the console.
+
 require 'zip'
 require 'stringio'
 require 'json'
 
 SRC_PATH = 'address_all.csv.zip'
 
+# Recursively jumps into nested zip files and processes the "pos" files.
+# @param [Zip::InputStream] stream - The input stream of the zip file
 def jump_into(stream)
   while entry = stream.get_next_entry
     if /.zip$/.match(entry.name.downcase)
@@ -40,6 +47,7 @@ def jump_into(stream)
   end
 end
 
+# Open the zip file and call the 'jump_into' function to process the files
 Zip::InputStream.open(File.open(SRC_PATH)) {|stream|
   jump_into(stream)
 }
